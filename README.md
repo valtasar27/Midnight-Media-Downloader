@@ -1,7 +1,7 @@
 # Midnight-Media-Downloader
 
-I got real tired of of websites full of ads, risk for viruses, scams, info snatchers and what not, so i made this simple media downloader in python that should work with most, if not all media links, even the more non-conventional ones if you know what link you have.
-I shall and want to maintain this for as long as i can and as long as i can think of something to add/fix, i'm no expert, just some dude trying to improve (i think you can tell by my shit readme).
+I got real tired of websites full of ads, risk for viruses, scams, info snatchers and what not, so i made this simple media downloader in python that should work with most, if not all media links, even the more non-conventional ones if you know what you are doing.
+I want and shall maintain this for as long as i can and as long as i can think of something to add/fix, i'm no expert, just some dude trying to improve (i think you can tell by my shit readme).
 
 #DEPENDENMCIES
 
