@@ -6,7 +6,7 @@ class Main:
     def __init__(self):
         
         self.root = CTk()
-        self.root.title("Media Downloader")
+        self.root.title("Midnight Media Downloader")
         set_appearance_mode("Dark")
         self.root.geometry("500x500")
         self.root.resizable(0,0)
@@ -119,4 +119,6 @@ class Main:
         self.root.mainloop()
         
 app = Main()
-app.run()
+
+if __name__ == "__main__":
+    app.run()
