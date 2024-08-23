@@ -85,7 +85,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output_file = file_name #+ ".mp3"
+            output_file = file_name + ".mp3"
             ydl_opts = {
                 "format": 'bestaudio/best',
                 "outtmpl": output_file,
@@ -103,7 +103,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output_file = file_name #+ ".wav"
+            output_file = file_name + ".wav"
             ydl_opts = {
                 "format": 'bestaudio/best',
                 "outtmpl": output_file,
