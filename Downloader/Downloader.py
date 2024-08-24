@@ -8,7 +8,6 @@ class Main:
         
         self.current_path = os.path.dirname(os.path.realpath(__file__))
         
-        
         self.root = CTk()
         self.root.title("Midnight Media Downloader")
         set_appearance_mode("Dark")
