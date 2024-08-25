@@ -66,7 +66,6 @@ class Funtions_avg:
         except Exception as e:
             print(e)
             
-            
     def social_media_download_video(self,url:str,file_name:str,quality:str,folder:str):
         
         match quality:
