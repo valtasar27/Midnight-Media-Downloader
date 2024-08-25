@@ -138,3 +138,4 @@ class Funtions_nvidia:
             fmp.run_async(download)
         except Exception as e:
             print(e)
+#git test
