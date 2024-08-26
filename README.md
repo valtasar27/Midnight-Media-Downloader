@@ -5,7 +5,7 @@ I want and shall maintain this for as long as i can and as long as i can think o
 
 #DEPENDENMCIES
 
-To be able to use this witout issues you will need:
+To be able to use this without issues you will need:
 
     ffmpeg-python (https://github.com/kkroening/ffmpeg-python)
     yt-dlp (https://github.com/yt-dlp/yt-dlp)
