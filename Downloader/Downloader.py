@@ -1,7 +1,23 @@
 from customtkinter import *
+import tkinter as tk
 from functions import *
 from time import sleep
-import os
+import os, io
+import threading
+
+
+class RedirectTerminal(io.StringIO):
+    def __init__(self, text_widget):
+        super().__init__()
+        self.widget = text_widget
+        
+    def write(self, string):
+        self.widget.insert(tk.END, string)
+        self.widget.see(tk.END)
+        
+    def flush(self):
+        pass
+        
 
 class Main:
     def __init__(self):
@@ -72,22 +88,29 @@ class Main:
         self.directory_choice.pack()
         self.directory_choice.place(x=155,y=260)
               
-        self.download_button = CTkButton(master=self.mainframe, width=200, text="Download Video/Audio",font=("Source Code Pro",13), command=self.action_select, border_width=2, border_color="grey")
+        self.download_button = CTkButton(master=self.mainframe, width=200, text="Download Video/Audio",font=("Source Code Pro",13), command=self.thread_manager, border_width=2, border_color="grey")
         self.download_button.pack()
-        self.download_button.place(x=200,y=340)
+        self.download_button.place(x=200,y=300)
+        
+        self.output_text = CTkTextbox(master=self.mainframe, width=400, height=100, font=("Source Code Pro", 13), border_width=2, border_color="grey")
+        self.output_text.pack()
+        self.output_text.place(x=105,y=360)
+
+        sys.stdout = RedirectTerminal(self.output_text)
+        sys.stderr = RedirectTerminal(self.output_text)
+
     
     def social_media_check(self):
         if self.social_media_var.get() == 0:
-            self.download_button.configure(command=self.action_select)
             self.format.configure(values=["MP4","MP3","WAV"])
 
         elif self.social_media_var.get() == 1:
-            self.download_button.configure(command=self.sm_action_select)
             self.format.configure(values=["Video","MP3","WAV"])
             
     def downloads_folder(self):
-        self.folder = filedialog.askdirectory(initialdir=self.current_path,title="Choose where the videos will be saved")
-        self.download_directory = self.folder
+        folder = filedialog.askdirectory(initialdir=self.current_path,title="Choose where the videos will be saved")
+        self.download_directory = folder
+        print(f"Choosen Directory is {folder}")
     
     def nvidia_cb(self):
         if self.nvidia_var.get() == 0:
@@ -97,7 +120,23 @@ class Main:
         elif self.nvidia_var.get() == 1:
             self.format.configure(values=["MP4"])
             self.nvidia_text.configure(text="H264\nProfile")
-     
+    
+    def thread_manager(self):
+        
+        #Temporal solution until i find something better
+        #to display the console in the GUI
+        
+        if self.social_media_var.get() == 1:
+            sm_thread = threading.Thread(target=self.sm_action_select)
+            sm_thread.daemon = True
+            sm_thread.start()
+            
+        elif self.social_media_var.get() == 0:
+            n_thread = threading.Thread(target=self.action_select)
+            n_thread.daemon = True
+            n_thread.start()
+        
+    
     def sm_action_select(self):
         
         match self.format.get():
@@ -135,6 +174,7 @@ class Main:
         self.root.mainloop()
         
 app = Main()
+
 
 if __name__ == "__main__":
     

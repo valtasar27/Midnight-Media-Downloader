@@ -1,5 +1,7 @@
 import ffmpeg as fmp
 import yt_dlp as yt
+#import io
+import tkinter as tk
 
 class Funtions_avg:
     
@@ -80,7 +82,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output = folder + '/' + file_name
+            output = folder + '/' + file_name + ".webm"
             ydl_opts = {
                 "format": f'bestvideo[height<={res}]+bestaudio/best',
                 "outtmpl": output
