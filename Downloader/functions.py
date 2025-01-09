@@ -82,7 +82,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output = folder + '/' + file_name + ".webm"
+            output = folder + '/' + file_name 
             ydl_opts = {
                 "format": f'bestvideo[height<={res}]+bestaudio/best',
                 "outtmpl": output
@@ -96,7 +96,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output = folder + '/' + file_name + ".mp3"
+            output = folder + '/' + file_name 
             ydl_opts = {
                 "format": 'bestaudio/best',
                 "outtmpl": output,
@@ -114,7 +114,7 @@ class Funtions_avg:
         
         try:
             input_url = url
-            output = folder + '/' + file_name + ".wav"
+            output = folder + '/' + file_name 
             ydl_opts = {
                 "format": 'bestaudio/best',
                 "outtmpl": output,
@@ -137,7 +137,7 @@ class Funtions_nvidia:
             output = folder + '/' + file_name + ".mp4"
             stream = fmp.input(input_file,hwaccel='cuda')
             download = fmp.output(stream,output,format='mp4',vcodec='h264_nvenc',preset=n_profile,video_bitrate='20M')
+            print(fmp.get_args(download))
             fmp.run_async(download)
         except Exception as e:
             print(e)
-#git test
