@@ -103,9 +103,11 @@ class Main:
     def social_media_check(self):
         if self.social_media_var.get() == 0:
             self.format.configure(values=["MP4","MP3","WAV"])
+            self.nvidia.configure(state=tk.NORMAL)
 
         elif self.social_media_var.get() == 1:
             self.format.configure(values=["Video","MP3","WAV"])
+            self.nvidia.configure(state=tk.DISABLED)
             
     def downloads_folder(self):
         folder = filedialog.askdirectory(initialdir=self.current_path,title="Choose where the videos will be saved")
