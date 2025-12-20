@@ -3,7 +3,7 @@
 I got real tired of websites full of ads, risk for viruses, scams, info snatchers and what not, so i made this simple media downloader in python that should work with most, if not all media links, even the more non-conventional ones if you know what you are doing.
 I want and shall maintain this for as long as i can and as long as i can think of something to add/fix, i'm no expert, just some dude trying to improve (i think you can tell by my shit readme).
 
-#DEPENDENMCIES
+#DEPENDENCIES
 
 To be able to use this without issues you will need:
 
@@ -27,3 +27,9 @@ Honestly, it's pretty intuitive, but a few warnings just in case:
 #FINAL NOTES
 
 Any feedback, suguestions or issues that you may have, plase let me know, i wish to improve both my skills and this... abomination. Also, if any experienced devs wish to roast me or my code, do so, i know this is isn't great and honetly i would find it funny, cheers.
+
+#LINUX USERS
+
+Clone the repo as you normally would and start a python venv.
+Install Customtkinter, yt-dlp and ffmpeg.
+Start Downloader.py and you should be fine, please open a ticket if something doesn't work.
