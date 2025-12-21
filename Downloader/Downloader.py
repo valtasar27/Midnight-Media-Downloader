@@ -4,6 +4,7 @@ from functions import *
 from time import sleep
 import os, io
 import threading
+from PIL import Image, ImageTk
 
 
 class RedirectTerminal(io.StringIO):
@@ -29,13 +30,14 @@ class Main:
         set_appearance_mode("Dark")
         self.root.geometry("600x500")
         self.root.resizable(0,0)
-        self.root.iconbitmap(self.current_path + "\icon.ico")
+        self.app_icon = ImageTk.PhotoImage(Image.open(self.current_path + "/dependencies/icon.png"))
+        self.root.iconphoto(False, self.app_icon)
         
         self.mainframe = CTkFrame(master=self.root)
         self.mainframe.pack(fill="both", expand=True)
         
-        self.title_font = FontManager.load_font(self.current_path + "\Fonts\EduVICWANTBeginner-VariableFont_wght.ttf")
-        self.default_font = FontManager.load_font(self.current_path + "\Fonts\SourceCodePro-VariableFont_wght.ttf")
+        self.title_font = FontManager.load_font(self.current_path + "/dependencies/Fonts/EduVICWANTBeginner-VariableFont_wght.ttf")
+        self.default_font = FontManager.load_font(self.current_path + "/dependencies/Fonts/SourceCodePro-VariableFont_wght.ttf")
         
         self.title = CTkLabel(master=self.mainframe, text="Midnight Media Downloader", font=("Edu VIC WA NT Beginner",30))
         self.title.pack()
