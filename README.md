@@ -19,10 +19,7 @@ Honestly, it's pretty intuitive, but a few warnings just in case:
      because (AS FAR AS MY LITTLE KNOWLEDGE GOES) ffmpeg can't just fetch the media in those link (youtube for example)
 
     -If you have an nvidia graphics card, i strongly recomend that you check the mark that says Use Nvidia GPU (Video Only),
-     because i made it able to use the hardware acceleration from nvidia, BUT NOTE, that i haven't fully tested it because...
-     i don't have a nvidia gpu (old integrated graphics from old laptop), but a friend that does have one tried it and helped
-     me get some results, yet further testing is needed and feedback from nvidia gpu users is greatly appreciated.
-     Also, you can't use this with social media links (FOR NOW, I'LL FIND A WAY... i think).
+     because i made it able to use the hardware acceleration from nvidia. The difference is not abysmal, but it gets the job done.
 
 #FINAL NOTES
 
